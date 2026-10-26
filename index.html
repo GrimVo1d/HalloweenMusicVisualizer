@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NULL // SOUND</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="stage" class="stage">
+    <canvas id="screen"></canvas>
+    <canvas id="glow" class="glow"></canvas>
+  </div>
+
+  <!-- Sound source picker -->
+  <div id="start" class="start">
+    <h1 class="creepy">NULL // SOUND</h1>
+    <p class="sub">where does the music come from?</p>
+    <div class="inputs">
+      <button type="button" data-input="files"><b>[1] MUSIC FILES</b><span>pick mp3 files or drop them into the window</span></button>
+      <button type="button" data-input="tab"><b>[2] TAB OR SCREEN</b><span>a Chrome tab, or the entire screen for music apps (Chrome only)</span></button>
+    </div>
+    <p id="start-error" class="error"></p>
+    <p class="hint">H — all keys</p>
+  </div>
+
+  <input id="file" type="file" accept="audio/*" multiple hidden>
+
+  <div id="say" class="say hidden">
+    <span>&gt;</span>
+    <input id="say-input" autocomplete="off" spellcheck="false">
+    <em id="say-count"></em>
+  </div>
+
+  <div id="hud" class="hud"></div>
+  <div id="toast" class="toast"></div>
+
+  <div id="help" class="help hidden">
+    <div class="help-title">KEYS</div>
+    <div><b>Space / →</b> next mode</div>
+    <div><b>←</b> previous mode</div>
+    <div><b>1–3</b> mode by number</div>
+    <div><b>A</b> auto mode rotation on/off</div>
+    <div><b>W</b> flash a word</div>
+    <div><b>T</b> type your own text</div>
+    <div><b>G</b> pick a figure (cycle → one → …)</div>
+    <div><b>↑ ↓</b> sensitivity</div>
+    <div><b>N</b> next track (files)</div>
+    <div><b>M</b> change sound source</div>
+    <div><b>F</b> fullscreen</div>
+    <div><b>H</b> close this help</div>
+    <div class="help-note">You can drop files into the window at any time.</div>
+  </div>
+
+  <div class="crt" aria-hidden="true"></div>
+
+  <script src="config.js"></script>
+  <script src="art.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
